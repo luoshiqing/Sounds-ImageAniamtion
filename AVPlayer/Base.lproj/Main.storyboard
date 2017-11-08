@@ -1,14 +1,18 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="CRd-to-e38">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AVPlayer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +20,82 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ekl-qF-snM">
+                                <rect key="frame" x="125.5" y="318.5" width="124" height="30"/>
+                                <color key="backgroundColor" red="0.1443275809" green="0.75748664139999999" blue="0.53580862279999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="124" id="c5P-Fm-zaZ"/>
+                                    <constraint firstAttribute="height" constant="30" id="oe0-GP-IwO"/>
+                                </constraints>
+                                <state key="normal" title="开始播放">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playerAct:" destination="BYZ-38-t0r" eventType="touchUpInside" id="upH-8x-6N4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6tL-43-s2l">
+                                <rect key="frame" x="126" y="368.5" width="123.5" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="暂停播放">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="stopAct:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ctL-Bm-Eh6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5KM-x1-5e1">
+                                <rect key="frame" x="138" y="192" width="99" height="30"/>
+                                <color key="backgroundColor" red="0.1450980392" green="0.75686274509999996" blue="0.53725490200000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="99" id="EC6-Zu-Xur"/>
+                                    <constraint firstAttribute="height" constant="30" id="qwv-5j-6bX"/>
+                                </constraints>
+                                <state key="normal" title="git">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="gitAct:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BCf-FI-Mzl"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ekl-qF-snM" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="2KN-4C-R0g"/>
+                            <constraint firstItem="5KM-x1-5e1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="COf-J4-Itg"/>
+                            <constraint firstItem="ekl-qF-snM" firstAttribute="top" secondItem="5KM-x1-5e1" secondAttribute="bottom" constant="96.5" id="YDe-r2-C92"/>
+                            <constraint firstItem="ekl-qF-snM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="f0S-G9-n4y"/>
+                            <constraint firstItem="6tL-43-s2l" firstAttribute="trailing" secondItem="ekl-qF-snM" secondAttribute="trailing" id="fvo-2J-ltd"/>
+                            <constraint firstItem="6tL-43-s2l" firstAttribute="leading" secondItem="ekl-qF-snM" secondAttribute="leading" id="q2F-LD-TYI"/>
+                            <constraint firstItem="6tL-43-s2l" firstAttribute="top" secondItem="ekl-qF-snM" secondAttribute="bottom" constant="20" id="wyI-nL-lmD"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Pj0-EC-DXm"/>
+                    <connections>
+                        <outlet property="playerBtn" destination="ekl-qF-snM" id="0xG-9b-Ze7"/>
+                        <outlet property="stopBtn" destination="6tL-43-s2l" id="QtK-9F-o0g"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="140" y="138.98050974512745"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="lVJ-YZ-vSm">
+            <objects>
+                <navigationController id="CRd-to-e38" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Q7f-pU-VJr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="pfn-e0-Vrq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8te-sZ-ba1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-550" y="139"/>
         </scene>
     </scenes>
 </document>
